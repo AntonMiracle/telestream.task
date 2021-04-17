@@ -80,26 +80,4 @@ input::placeholder {
   opacity: .5;
 }
 
-button {
-  outline: none;
-  border: 1px solid #152614;
-  padding: 5px 15px;
-  width: var(--m-width);
-  background-color: #A0E788;
-  color: #152614;
-  letter-spacing: 1px;
-  font-size: .9em;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
-button:hover {
-  background-color: #119822;
-  color: #A0E788;
-}
-
-button:active {
-  background-color: #2c3e50;
-  color: azure;
-}
 </style>
