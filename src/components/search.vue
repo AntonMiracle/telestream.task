@@ -3,7 +3,7 @@
     <span> {{ error }}</span>
     <form @submit.prevent="startSearch">
       <input type="text" v-model="searchValue" placeholder="enter word or phrase">
-      <button type="submit">find</button>
+      <button type="submit">szukaj</button>
     </form>
   </div>
 </template>
