@@ -3,7 +3,6 @@ export default {
         saveFavoriteGif({state}, val) {
             if (val && state.fGifs.filter(e => e.id === val.id).length === 0) {
                 state.fGifs.push(val);
-                console.log(state.fGifs)
                 localStorage.setItem(state.key, JSON.stringify(state.fGifs));
             }
         },
@@ -32,7 +31,6 @@ export default {
                         image: ele.image
                     });
                 }
-                console.log(state.fGifs);
             }
             return state.fGifs;
         }
