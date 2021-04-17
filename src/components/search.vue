@@ -62,12 +62,13 @@ input {
   padding: 5px 10px;
   width: var(--m-width);
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  border-bottom: 1px solid rgba(30, 68, 30, .2);
   margin-right: 10px;
+  background-color: #E4F8DD;
 }
 
 input:focus {
-  box-shadow: 0 1px 0 0 darkslategrey;
+  box-shadow: 0 1px 0 0 #1E441E;
 }
 
 input::placeholder {
@@ -76,13 +77,19 @@ input::placeholder {
 
 button {
   outline: none;
-  border: 1px solid #2c3e50;
+  border: 1px solid #152614;
   padding: 5px 15px;
   width: var(--m-width);
-  background-color: azure;
+  background-color: #A0E788;
+  color: #152614;
+  letter-spacing: 1px;
+  font-size: .9em;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 button:hover{
-  background-color: aqua;
+  background-color: #119822;
+  color: #A0E788;
 }
 button:active {
   background-color: #2c3e50;

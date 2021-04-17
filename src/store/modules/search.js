@@ -24,7 +24,7 @@ export default {
     },
     state: {
         searchValue: '',
-        limit: 1,
+        limit: 10,
         apiKey: "HqAvKVtqkWGQusQ4RQzCOoRoaMsDjG3O",
         gifs: []
     },
