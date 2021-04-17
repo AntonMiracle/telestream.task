@@ -1,7 +1,11 @@
 <template>
   <div class="item">
-    <img :src="gif.image">
-    <button v-on:click="addToFavorites">add</button>
+    <img :src="gif.image" alt="gif.id">
+    <div class="btns">
+      <a :href="gif.url" target="_blank">url</a>
+      <button v-on:click="addToFavorites">add</button>
+    </div>
+
   </div>
 </template>
 
@@ -42,10 +46,14 @@ img {
   border-radius: 5px;
 }
 
-button {
+.btns {
   position: absolute;
   right: 5px;
   top: 5px;
+}
+
+.btns a {
+  margin-right: 5px;
 }
 </style>
 
