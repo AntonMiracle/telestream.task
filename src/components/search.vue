@@ -3,6 +3,7 @@
     <span> {{ error }}</span>
     <form @submit.prevent="startSearch">
       <input type="text" v-model="searchValue" placeholder="enter word or phrase">
+      <input type="number" v-model="limit">
       <button type="submit">szukaj</button>
     </form>
   </div>
@@ -13,12 +14,13 @@ import {mapMutations, mapActions} from "vuex";
 
 export default {
   methods: {
-    ...mapMutations(["setSearchValue"]),
+    ...mapMutations(["setSearchValue", "setLimit"]),
     ...mapActions(["search"]),
     startSearch() {
       console.log('START SEARCH');
       if (this.searchValue.trim()) {
         this.setSearchValue(this.searchValue);
+        this.setLimit(this.limit);
         this.search();
         this.searchValue = this.error = '';
       } else {
@@ -29,6 +31,7 @@ export default {
   data() {
     return {
       searchValue: '',
+      limit: 10,
       error: ''
     }
   }
@@ -66,7 +69,9 @@ input {
   margin-right: 10px;
   background-color: #E4F8DD;
 }
-
+input[type=number]{
+  width: 50px;
+}
 input:focus {
   box-shadow: 0 1px 0 0 #1E441E;
 }
@@ -87,10 +92,12 @@ button {
   text-transform: uppercase;
   font-weight: 400;
 }
-button:hover{
+
+button:hover {
   background-color: #119822;
   color: #A0E788;
 }
+
 button:active {
   background-color: #2c3e50;
   color: azure;

@@ -11,6 +11,9 @@ export default {
         setSearchValue(state, val) {
             state.searchValue = val;
         },
+        setLimit(state, val) {
+            state.limit = val;
+        },
         setGifs(state, val) {
             state.gifs = val.map(e => {
                 return {
@@ -24,7 +27,7 @@ export default {
     },
     state: {
         searchValue: '',
-        limit: 10,
+        limit: 0,
         apiKey: "HqAvKVtqkWGQusQ4RQzCOoRoaMsDjG3O",
         gifs: []
     },
