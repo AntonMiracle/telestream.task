@@ -17,7 +17,6 @@ export default {
     ...mapMutations(["setSearchValue", "setLimit"]),
     ...mapActions(["search"]),
     startSearch() {
-      console.log('START SEARCH');
       if (this.searchValue.trim()) {
         this.setSearchValue(this.searchValue);
         this.setLimit(this.limit);
