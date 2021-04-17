@@ -12,12 +12,19 @@ export default {
             state.searchValue = val;
         },
         setGifs(state, val) {
-            state.gifs = val;
+            state.gifs = val.map(e => {
+                return {
+                    id: e.id,
+                    url: e.url,
+                    type: e.type,
+                    image: e.images.original.url,
+                }
+            });
         }
     },
     state: {
         searchValue: '',
-        limit: 10,
+        limit: 1,
         apiKey: "HqAvKVtqkWGQusQ4RQzCOoRoaMsDjG3O",
         gifs: []
     },
