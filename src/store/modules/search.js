@@ -19,7 +19,6 @@ export default {
                 return {
                     id: e.id,
                     url: e.url,
-                    type: e.type,
                     image: e.images.original.url,
                 }
             });
@@ -29,7 +28,7 @@ export default {
         searchValue: '',
         limit: 0,
         apiKey: "HqAvKVtqkWGQusQ4RQzCOoRoaMsDjG3O",
-        gifs: []
+        gifs: [],
     },
     getters: {
         getSearchValue(state) {
