@@ -9,15 +9,17 @@
 </template>
 
 <script>
-import {mapMutations} from "vuex";
+import {mapMutations, mapActions} from "vuex";
 
 export default {
   methods: {
     ...mapMutations(["setSearchValue"]),
+    ...mapActions(["search"]),
     startSearch() {
       console.log('START SEARCH');
       if (this.searchValue.trim()) {
         this.setSearchValue(this.searchValue);
+        this.search();
         this.searchValue = this.error = '';
       } else {
         this.error = "can not be empty";
@@ -79,7 +81,9 @@ button {
   width: var(--m-width);
   background-color: azure;
 }
-
+button:hover{
+  background-color: aqua;
+}
 button:active {
   background-color: #2c3e50;
   color: azure;
