@@ -1,29 +1,35 @@
 <template>
-  <div class="item">
-    <img :src="gif.image" alt="gif.id">
-    <div class="btns">
-      <a :href="gif.url" target="_blank">url</a>
-      <button v-on:click="addToFavorites">add</button>
+  <div class="result">
+    <div class="item" v-for="gif of getGifs" :key="gif.id">
+      <img :src="gif.image" alt="gif.id">
+      <button v-on:click="addToFavorites(gif)">add</button>
     </div>
-
   </div>
 </template>
 
 <script>
+import {mapGetters, mapMutations} from "vuex";
+
 export default {
-  props: {
-    gif: {
-      type: Object,
-      require: true
-    }
-  },
+  computed: mapGetters(['getGifs']),
   methods: {
-    addToFavorites() {
+    ...mapMutations(["saveFavoriteGif"]),
+    addToFavorites(gif) {
+      this.saveFavoriteGif(gif);
     }
   }
 }
 </script>
+
 <style scoped>
+.result {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
 .item {
   position: relative;
   display: flex;
@@ -46,14 +52,9 @@ img {
   border-radius: 5px;
 }
 
-.btns {
+button {
   position: absolute;
   right: 5px;
   top: 5px;
 }
-
-.btns a {
-  margin-right: 5px;
-}
 </style>
-
